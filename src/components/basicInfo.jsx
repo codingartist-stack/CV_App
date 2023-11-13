@@ -85,19 +85,19 @@ function BasicInfo() {
           />
         </fieldset>
       </form>
-      <div>
+      {/* <div>
         <h1>
           {personInfo.firstName} {personInfo.lastName}
         </h1>
         <i>{personInfo.title}</i>
         <ul>
-          <li>{personInfo.email}</li>
           <li>{personInfo.phone}</li>
+          <li>{personInfo.email}</li>
           <li>{personInfo.website}</li>
         </ul>
         <p>{personInfo.summary}</p>
-        <button>Edit</button>
-      </div>
+        <button>Edit</button> 
+      </div> */}
     </>
   );
 }
