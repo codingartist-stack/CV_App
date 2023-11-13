@@ -50,9 +50,14 @@ function BasicInfo() {
     setPersonInfo(newSummary);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (personInfo === '') return;
+  };
+
   return (
     <>
-      <form>
+      <form onSubmit={handleSubmit}>
         <fieldset>
           <legend>Personal Information</legend>
           <input
@@ -84,8 +89,9 @@ function BasicInfo() {
             onChange={handleSummary}
           />
         </fieldset>
+        <button>add</button>
       </form>
-      {/* <div>
+      <div>
         <h1>
           {personInfo.firstName} {personInfo.lastName}
         </h1>
@@ -96,8 +102,8 @@ function BasicInfo() {
           <li>{personInfo.website}</li>
         </ul>
         <p>{personInfo.summary}</p>
-        <button>Edit</button> 
-      </div> */}
+        <button>Edit</button>
+      </div>
     </>
   );
 }
