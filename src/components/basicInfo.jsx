@@ -20,8 +20,34 @@ function BasicInfo() {
       'As a distinguished historian renowned for my deep expertise in unraveling the intricacies of historical narratives. With a passion for uncovering untold stories and exploring the nuances of different eras, I have made significant contributions to the field through meticulous research and insightful analysis. My publications have garnered acclaim for their scholarly rigor, contributing valuable insights to our understanding of the past.',
   });
 
-  const handleSave = (e) => {
-    setPersonInfo(...personInfo);
+  const handleFirstName = (e) => {
+    const newFirstPerson = { ...personInfo, firstName: e.target.value };
+    setPersonInfo(newFirstPerson);
+  };
+  const handleLastName = (e) => {
+    const newLastName = { ...personInfo, lastName: e.target.value };
+    setPersonInfo(newLastName);
+  };
+  const handleTitle = (e) => {
+    const newTitle = { ...personInfo, title: e.target.value };
+    setPersonInfo(newTitle);
+  };
+
+  const handlePhone = (e) => {
+    const newPhone = { ...personInfo, phone: e.target.value };
+    setPersonInfo(newPhone);
+  };
+  const handleEmail = (e) => {
+    const newEmail = { ...personInfo, phone: e.target.value };
+    setPersonInfo(newEmail);
+  };
+  const handleWebsite = (e) => {
+    const newURL = { ...personInfo, website: e.target.value };
+    setPersonInfo(newURL);
+  };
+  const handleSummary = (e) => {
+    const newSummary = { ...personInfo, summary: e.target.value };
+    setPersonInfo(newSummary);
   };
 
   return (
@@ -29,18 +55,34 @@ function BasicInfo() {
       <form>
         <fieldset>
           <legend>Personal Information</legend>
-          <input type="text" placeholder="First Name" />
-          <input type="text" placeholder="Last Name" />
-          <input type="text" placeholder="Professional Title" />
-          <input type="email" placeholder="email" />
-          <input type="number" placeholder="phone" />
-          <input type="url" placeholder="url website" />
+          <input
+            type="text"
+            placeholder="First Name"
+            onChange={handleFirstName}
+          />
+          <input
+            type="text"
+            placeholder="Last Name"
+            onChange={handleLastName}
+          />
+          <input
+            type="text"
+            placeholder="Professional Title"
+            onChange={handleTitle}
+          />
+          <input type="email" placeholder="email" onChange={handleEmail} />
+          <input type="number" placeholder="phone" onChange={handlePhone} />
+          <input
+            type="url"
+            placeholder="url website"
+            onChange={handleWebsite}
+          />
           <input
             type="text"
             placeholder="Professional Summary"
             className="textSummary"
+            onChange={handleSummary}
           />
-          <button onClick={handleSave}>Save</button>
         </fieldset>
       </form>
       <div>
@@ -48,12 +90,13 @@ function BasicInfo() {
           {personInfo.firstName} {personInfo.lastName}
         </h1>
         <i>{personInfo.title}</i>
-        <p>{personInfo.summary}</p>
         <ul>
           <li>{personInfo.email}</li>
           <li>{personInfo.phone}</li>
           <li>{personInfo.website}</li>
         </ul>
+        <p>{personInfo.summary}</p>
+        <button>Edit</button>
       </div>
     </>
   );
