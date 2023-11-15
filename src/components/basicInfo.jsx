@@ -5,15 +5,25 @@
 
 import { useState } from 'react';
 
-function BasicInfo({ updatePersonalInfo }) {
+function BasicInfo({
+  updateFirstName,
+  updateLastName,
+  updateTitle,
+  updateSummary,
+}) {
   const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [title, setTitle] = useState('');
+  const [summary, setSummary] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('something is happening');
     if (firstName === '') return;
 
-    updatePersonalInfo(firstName);
+    updateFirstName(firstName);
+    updateLastName(lastName);
+    updateTitle(title);
+    updateSummary(summary);
   };
 
   return (
@@ -26,7 +36,7 @@ function BasicInfo({ updatePersonalInfo }) {
             type="text"
             placeholder="First Name"
             id="firstName"
-            onChange={(e) => setFirstName(e.target)}
+            onChange={(e) => setFirstName(e.target.value)}
           />
         </fieldset>
 
@@ -36,7 +46,7 @@ function BasicInfo({ updatePersonalInfo }) {
             type="text"
             placeholder="Last Name"
             id="lastName"
-            // onChange={handleLastName}
+            onChange={(e) => setLastName(e.target.value)}
           />
         </fieldset>
 
@@ -46,7 +56,7 @@ function BasicInfo({ updatePersonalInfo }) {
             type="text"
             placeholder="Professional Title"
             id="title"
-            // onChange={handleTitle}
+            onChange={(e) => setTitle(e.target.value)}
           />
         </fieldset>
 
@@ -56,8 +66,8 @@ function BasicInfo({ updatePersonalInfo }) {
             type="text"
             placeholder="Professional Summary"
             className="textSummary"
-            id="summarty"
-            // onChange={handleSummary}
+            id="summary"
+            onChange={(e) => setSummary(e.target.value)}
           />
         </fieldset>
 
