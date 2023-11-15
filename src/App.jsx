@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import BasicInfo from './components/basicInfo';
-BasicInfo;
+import { DisplayPreview } from './components/displayPreview';
 
 function App() {
   const [personInfo, setPersonInfo] = useState({
@@ -32,7 +32,6 @@ function App() {
       return { ...currentPerson, summary };
     });
   };
-  console.log(personInfo);
 
   return (
     <>
@@ -42,6 +41,7 @@ function App() {
         updateTitle={updateTitle}
         updateSummary={updateSummary}
       />
+      <DisplayPreview personInfo={personInfo} />
     </>
   );
 }
