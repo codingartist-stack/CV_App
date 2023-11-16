@@ -65,7 +65,7 @@ function BasicInfo({
           <input
             type="text"
             placeholder="Professional Summary"
-            className="textSummary"
+            className="summaryInput"
             id="summary"
             onChange={(e) => setSummary(e.target.value)}
           />
