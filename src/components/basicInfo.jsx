@@ -3,12 +3,7 @@
 //title?
 //short blurb about self
 
-function BasicInfo({
-  updateFirstName,
-  updateLastName,
-  updateTitle,
-  updateSummary,
-}) {
+function BasicInfo(props) {
   return (
     <>
       <form>
@@ -19,7 +14,7 @@ function BasicInfo({
             type="text"
             placeholder="First Name"
             id="firstName"
-            onChange={(e) => updateFirstName(e.target.value)}
+            onChange={(e) => props.updateFirstName(e.target.value)}
           />
         </fieldset>
 
@@ -29,7 +24,7 @@ function BasicInfo({
             type="text"
             placeholder="Last Name"
             id="lastName"
-            onChange={(e) => updateLastName(e.target.value)}
+            onChange={(e) => props.updateLastName(e.target.value)}
           />
         </fieldset>
 
@@ -39,7 +34,7 @@ function BasicInfo({
             type="text"
             placeholder="Professional Title"
             id="title"
-            onChange={(e) => updateTitle(e.target.value)}
+            onChange={(e) => props.updateTitle(e.target.value)}
           />
         </fieldset>
 
@@ -50,7 +45,7 @@ function BasicInfo({
             placeholder="Professional Summary"
             className="summaryInput"
             id="summary"
-            onChange={(e) => updateSummary(e.target.value)}
+            onChange={(e) => props.updateSummary(e.target.value)}
           />
         </fieldset>
       </form>
