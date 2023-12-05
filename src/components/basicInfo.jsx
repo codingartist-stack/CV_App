@@ -3,32 +3,15 @@
 //title?
 //short blurb about self
 
-import { useState } from 'react';
-
 function BasicInfo({
   updateFirstName,
   updateLastName,
   updateTitle,
   updateSummary,
 }) {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [title, setTitle] = useState('');
-  const [summary, setSummary] = useState('');
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (firstName === '') return;
-
-    updateFirstName(firstName);
-    updateLastName(lastName);
-    updateTitle(title);
-    updateSummary(summary);
-  };
-
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form>
         <h2>Personal Information</h2>
         <fieldset>
           <legend htmlFor="firstName">First Name</legend>
@@ -36,7 +19,7 @@ function BasicInfo({
             type="text"
             placeholder="First Name"
             id="firstName"
-            onChange={(e) => setFirstName(e.target.value)}
+            onChange={(e) => updateFirstName(e.target.value)}
           />
         </fieldset>
 
@@ -46,7 +29,7 @@ function BasicInfo({
             type="text"
             placeholder="Last Name"
             id="lastName"
-            onChange={(e) => setLastName(e.target.value)}
+            onChange={(e) => updateLastName(e.target.value)}
           />
         </fieldset>
 
@@ -56,7 +39,7 @@ function BasicInfo({
             type="text"
             placeholder="Professional Title"
             id="title"
-            onChange={(e) => setTitle(e.target.value)}
+            onChange={(e) => updateTitle(e.target.value)}
           />
         </fieldset>
 
@@ -67,11 +50,9 @@ function BasicInfo({
             placeholder="Professional Summary"
             className="summaryInput"
             id="summary"
-            onChange={(e) => setSummary(e.target.value)}
+            onChange={(e) => updateSummary(e.target.value)}
           />
         </fieldset>
-
-        <button>save</button>
       </form>
     </>
   );
