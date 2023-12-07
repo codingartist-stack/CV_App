@@ -14,7 +14,8 @@ function BasicInfo(props) {
             type="text"
             placeholder="First Name"
             id="firstName"
-            onChange={(e) => props.updateFirstName(e.target.value)}
+            onChange={(e) => props.updatePerson('firstName', e.target.value)}
+            name="firstName"
           />
         </fieldset>
 
@@ -24,7 +25,7 @@ function BasicInfo(props) {
             type="text"
             placeholder="Last Name"
             id="lastName"
-            onChange={(e) => props.updateLastName(e.target.value)}
+            onChange={(e) => props.updatePerson('lastName', e.target.value)}
           />
         </fieldset>
 
@@ -34,18 +35,18 @@ function BasicInfo(props) {
             type="text"
             placeholder="Professional Title"
             id="title"
-            onChange={(e) => props.updateTitle(e.target.value)}
+            onChange={(e) => props.updatePerson('title', e.target.value)}
           />
         </fieldset>
 
         <fieldset>
           <legend htmlFor="summary">Summary</legend>
-          <input
+          <textarea
             type="text"
             placeholder="Professional Summary"
             className="summaryInput"
             id="summary"
-            onChange={(e) => props.updateSummary(e.target.value)}
+            onChange={(e) => props.updatePerson('summary', e.target.value)}
           />
         </fieldset>
       </form>
