@@ -4,7 +4,9 @@ export function DisplayBasicInfo(props) {
       <h1 key={props.id}>
         {props.firstName} {props.lastName}
       </h1>
-      <i>{props.title}</i>
+      <h2>
+        <i>{props.title}</i>
+      </h2>
       <p>{props.summary}</p>
     </>
   );
