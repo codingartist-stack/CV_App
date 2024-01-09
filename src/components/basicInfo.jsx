@@ -40,6 +40,26 @@ function BasicInfo(props) {
         </fieldset>
 
         <fieldset>
+          <legend htmlFor={props.id + '-phone'}>Phone Number</legend>
+          <input
+            type="tel"
+            placeholder="(123)123-1234"
+            id={props.id + '-phone'}
+            onChange={(e) => props.updatePerson('phone', e.target.value)}
+          />
+        </fieldset>
+
+        <fieldset>
+          <legend htmlFor={props.id + '-email'}>Email</legend>
+          <input
+            type="text"
+            placeholder="example@email.com"
+            id={props.id + '-email'}
+            onChange={(e) => props.updatePerson('email', e.target.value)}
+          />
+        </fieldset>
+
+        <fieldset>
           <legend htmlFor={props.id + '-summary'}>Summary</legend>
           <textarea
             type="text"
