@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import BasicInfo from './components/basicInfo';
 import { DisplayPreview } from './components/displayPreview';
+import Skills from './components/Skills';
 
 function App() {
   const [personInfo, setPersonInfo] = useState({
@@ -38,7 +39,11 @@ function App() {
 
   return (
     <>
-      <BasicInfo updatePerson={updatePerson} />
+      <main>
+        <BasicInfo updatePerson={updatePerson} />
+        <Skills updatePerson={updatePerson} personInfo={personInfo} />
+      </main>
+
       <DisplayPreview personInfo={personInfo} />
     </>
   );

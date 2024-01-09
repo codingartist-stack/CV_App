@@ -14,6 +14,10 @@ export function DisplayPreview({ personInfo }) {
         <p>{personInfo.phone}</p>
         <p>{personInfo.email}</p>
       </aside>
+      <div>
+        <h3>skills</h3>
+        <ul></ul>
+      </div>
     </section>
   );
 }
