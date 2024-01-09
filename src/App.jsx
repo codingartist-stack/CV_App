@@ -25,7 +25,14 @@ function App() {
   });
   const updatePerson = (name, value) => {
     setPersonInfo((currentPerson) => {
-      return { ...currentPerson, ...{ [name]: value } };
+      if (Array.isArray(currentPerson[name])) {
+        return {
+          ...currentPerson,
+          ...{ [name]: [...currentPerson[name], value] },
+        };
+      } else {
+        return { ...currentPerson, ...{ [name]: value } };
+      }
     });
   };
 
