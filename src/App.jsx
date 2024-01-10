@@ -20,7 +20,16 @@ function App() {
         graduatedYear: 2006,
       },
     ],
-    skills: [],
+    skills: [
+      {
+        id: crypto.randomUUID(),
+        title: 'Problem Solving',
+      },
+      {
+        id: crypto.randomUUID(),
+        title: 'Communication',
+      },
+    ],
     interests: [],
     experience: [],
   });
@@ -29,7 +38,12 @@ function App() {
       if (Array.isArray(currentPerson[name])) {
         return {
           ...currentPerson,
-          ...{ [name]: [...currentPerson[name], value] },
+          ...{
+            [name]: [
+              ...currentPerson[name],
+              { id: crypto.randomUUID(), title: value },
+            ],
+          },
         };
       } else {
         return { ...currentPerson, ...{ [name]: value } };

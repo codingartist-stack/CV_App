@@ -1,14 +1,43 @@
+import { useState } from 'react';
+
 export default function Skills(props) {
+  const [skill, setSkill] = useState('');
+
+  const updateSkill = (e) => {
+    setSkill(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('i have been clicked');
+    props.updatePerson('skills', skill);
+
+    setSkill('');
+  };
+
   return (
     <>
       <form>
-        <h2>Skills</h2>
-        <input type="text" name="skills" id={props.id + '-skill'} />
-        <button onClick={(e) => props.updatePerson('skills', e.target.value)}>
-          Add
-        </button>
+        <label htmlFor={props.id + '-skill'}>Skills</label>
+        <input
+          type="text"
+          name="skills"
+          id={props.id + '-skill'}
+          value={skill}
+          onChange={updateSkill}
+        />
+        <button onClick={handleSubmit}>Add</button>
       </form>
-      <div>{props.personInfo.skills}</div>
+      <ul>
+        {props.personInfo.skills.map((skill) => {
+          return (
+            <li key={skill.id}>
+              {skill.title}
+              <button>Delete</button>
+            </li>
+          );
+        })}
+      </ul>
     </>
   );
 }
