@@ -9,7 +9,7 @@ export default function InterestForm(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.updateinterestList(interestItem);
+    props.updateInterestList(interestItem);
     setInterestItem('');
   };
 
