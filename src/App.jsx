@@ -2,6 +2,7 @@ import { useState } from 'react';
 import BasicInfo from './components/basicInfo';
 import { DisplayPreview } from './components/displayPreview';
 import Skills from './components/Skills';
+import InterestForm from './components/InterestsForm';
 
 function App() {
   const [personInfo, setPersonInfo] = useState({
@@ -20,7 +21,6 @@ function App() {
     //     graduatedYear: 2006,
     //   },
     // ],
-    // interests: [],
     // experience: [],
   });
 
@@ -35,6 +35,17 @@ function App() {
     },
   ]);
 
+  const [interestList, setinterestList] = useState([
+    {
+      id: crypto.randomUUID(),
+      title: 'Painting',
+    },
+    {
+      id: crypto.randomUUID(),
+      title: 'Theater',
+    },
+  ]);
+
   const updatePerson = (name, value) => {
     setPersonInfo((currentPerson) => {
       return { ...currentPerson, ...{ [name]: value } };
@@ -42,9 +53,9 @@ function App() {
   };
 
   const updateSkillsList = (value) => {
-    setSkills((skillsList) => {
+    setSkills((currentList) => {
       return [
-        ...skillsList,
+        ...currentList,
         {
           id: crypto.randomUUID(),
           title: value,
@@ -53,11 +64,44 @@ function App() {
     });
   };
 
+  const updateInterestList = (value) => {
+    setinterestList((currentList) => {
+      return [
+        ...currentList,
+        {
+          id: crypto.randomUUID(),
+          title: value,
+        },
+      ];
+    });
+  };
+
+  const deleteSkill = (id) => {
+    setSkills((currentList) => {
+      return currentList.filter((skill) => skill.id !== id);
+    });
+  };
+
+  const deleteInterest = (id) => {
+    setinterestList((currentList) => {
+      return currentList.filter((interest) => interest.id !== id);
+    });
+  };
+
   return (
     <>
       <main>
         <BasicInfo updatePerson={updatePerson} />
-        <Skills updateSkillsList={updateSkillsList} skillsList={skillsList} />
+        <Skills
+          updateSkillsList={updateSkillsList}
+          skillsList={skillsList}
+          deleteSkill={deleteSkill}
+        />
+        <InterestForm
+          updateInterestList={updateInterestList}
+          interestList={interestList}
+          deleteInterest={deleteInterest}
+        />
       </main>
 
       <DisplayPreview personInfo={personInfo} />

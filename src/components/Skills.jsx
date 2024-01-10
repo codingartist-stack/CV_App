@@ -32,7 +32,9 @@ export default function Skills(props) {
           return (
             <li key={skill.id}>
               {skill.title}
-              <button>Delete</button>
+              <button onClick={() => props.deleteSkill(skill.id)}>
+                Delete
+              </button>
             </li>
           );
         })}
