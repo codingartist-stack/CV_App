@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState } from 'react';
 
 export default function Skills(props) {
@@ -9,9 +10,7 @@ export default function Skills(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('i have been clicked');
-    props.updatePerson('skills', skill);
-
+    props.updateSkillsList(skill);
     setSkill('');
   };
 
@@ -29,7 +28,7 @@ export default function Skills(props) {
         <button onClick={handleSubmit}>Add</button>
       </form>
       <ul>
-        {props.personInfo.skills.map((skill) => {
+        {props.skillsList.map((skill) => {
           return (
             <li key={skill.id}>
               {skill.title}

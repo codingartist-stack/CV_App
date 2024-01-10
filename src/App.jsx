@@ -13,41 +13,43 @@ function App() {
       'As a distinguished historian renowned for my deep expertise in unraveling the intricacies of historical narratives. With a passion for uncovering untold stories and exploring the nuances of different eras, I have made significant contributions to the field through meticulous research and insightful analysis. My publications have garnered acclaim for their scholarly rigor, contributing valuable insights to our understanding of the past.',
     phone: '(123)123-1234',
     email: 'email@email.com',
-    education: [
-      {
-        school: 'University',
-        degree: 'Bacholars',
-        graduatedYear: 2006,
-      },
-    ],
-    skills: [
-      {
-        id: crypto.randomUUID(),
-        title: 'Problem Solving',
-      },
-      {
-        id: crypto.randomUUID(),
-        title: 'Communication',
-      },
-    ],
-    interests: [],
-    experience: [],
+    // education: [
+    //   {
+    //     school: 'University',
+    //     degree: 'Bacholars',
+    //     graduatedYear: 2006,
+    //   },
+    // ],
+    // interests: [],
+    // experience: [],
   });
+
+  const [skillsList, setSkills] = useState([
+    {
+      id: crypto.randomUUID(),
+      title: 'Problem Solving',
+    },
+    {
+      id: crypto.randomUUID(),
+      title: 'Communication',
+    },
+  ]);
+
   const updatePerson = (name, value) => {
     setPersonInfo((currentPerson) => {
-      if (Array.isArray(currentPerson[name])) {
-        return {
-          ...currentPerson,
-          ...{
-            [name]: [
-              ...currentPerson[name],
-              { id: crypto.randomUUID(), title: value },
-            ],
-          },
-        };
-      } else {
-        return { ...currentPerson, ...{ [name]: value } };
-      }
+      return { ...currentPerson, ...{ [name]: value } };
+    });
+  };
+
+  const updateSkillsList = (value) => {
+    setSkills((skillsList) => {
+      return [
+        ...skillsList,
+        {
+          id: crypto.randomUUID(),
+          title: value,
+        },
+      ];
     });
   };
 
@@ -55,7 +57,7 @@ function App() {
     <>
       <main>
         <BasicInfo updatePerson={updatePerson} />
-        <Skills updatePerson={updatePerson} personInfo={personInfo} />
+        <Skills updateSkillsList={updateSkillsList} skillsList={skillsList} />
       </main>
 
       <DisplayPreview personInfo={personInfo} />
