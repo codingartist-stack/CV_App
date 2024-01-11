@@ -1,22 +1,34 @@
-export function DisplayPreview({ personInfo }) {
+export function DisplayPreview(props) {
   return (
     <section className="preview">
       <main>
-        <h1 key={personInfo.id}>
-          {personInfo.firstName} {personInfo.lastName}
+        <h1 key={props.personInfo.id}>
+          {props.personInfo.firstName} {props.personInfo.lastName}
         </h1>
         <h2>
-          <i>{personInfo.title}</i>
+          <i>{props.personInfo.title}</i>
         </h2>
-        <p>{personInfo.summary}</p>
+        <p>{props.personInfo.summary}</p>
       </main>
       <aside>
-        <p>{personInfo.phone}</p>
-        <p>{personInfo.email}</p>
+        <p>{props.personInfo.phone}</p>
+        <p>{props.personInfo.email}</p>
       </aside>
       <div>
-        <h3>skills</h3>
-        <ul></ul>
+        <h3>Skills</h3>
+        <ul>
+          {props.skillsList.map((skill) => {
+            return <li key={skill.id}>{skill.title}</li>;
+          })}
+        </ul>
+      </div>
+      <div>
+        <h3>Interests</h3>
+        <ul>
+          {props.interestList.map((interest) => {
+            return <li key={interest.id}>{interest.title}</li>;
+          })}
+        </ul>
       </div>
     </section>
   );
