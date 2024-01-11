@@ -2,11 +2,6 @@ import { useState } from 'react';
 import DisplayEducationForm from './displayEducationForm';
 
 export default function EducationForm(props) {
-  // id: crypto.randomUUID(),
-  //   school: 'University',
-  //   degree: 'Bacholars',
-  //   graduatedYear: 2006,
-
   const [school, setSchool] = useState('');
   const [degree, setDegree] = useState('');
   const [year, setYear] = useState('');
@@ -83,7 +78,10 @@ export default function EducationForm(props) {
         </fieldset>
         <button onClick={handleSubmit}>Add</button>
       </form>
-      <DisplayEducationForm educationList={props.education} />
+      <DisplayEducationForm
+        educationList={props.education}
+        deleteListItem={props.deleteListItem}
+      />
     </>
   );
 }
