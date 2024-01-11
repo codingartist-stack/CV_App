@@ -10,7 +10,8 @@ export default function Skills(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.updateSkillsList(skill);
+    if (skill === '') return;
+    props.updateList('skills', skill);
     setSkill('');
   };
 
@@ -32,7 +33,7 @@ export default function Skills(props) {
           return (
             <li key={skill.id}>
               {skill.title}
-              <button onClick={() => props.deleteSkill(skill.id)}>
+              <button onClick={() => props.deleteListItem('skills', skill.id)}>
                 Delete
               </button>
             </li>

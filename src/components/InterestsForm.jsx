@@ -9,7 +9,8 @@ export default function InterestForm(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.updateInterestList(interestItem);
+    if (interestItem === '') return;
+    props.updateList('interests', interestItem);
     setInterestItem('');
   };
 
@@ -31,7 +32,11 @@ export default function InterestForm(props) {
           return (
             <li key={interestItem.id}>
               {interestItem.title}
-              <button onClick={() => props.deleteInterest(interestItem.id)}>
+              <button
+                onClick={() =>
+                  props.deleteListItem('interests', interestItem.id)
+                }
+              >
                 Delete
               </button>
             </li>

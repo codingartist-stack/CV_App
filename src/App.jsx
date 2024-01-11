@@ -52,16 +52,28 @@ function App() {
     });
   };
 
-  const updateSkillsList = (value) => {
-    setSkills((currentList) => {
-      return [
-        ...currentList,
-        {
-          id: crypto.randomUUID(),
-          title: value,
-        },
-      ];
-    });
+  const updateList = (listArray, value) => {
+    if (listArray === 'skills') {
+      setSkills((currentList) => {
+        return [
+          ...currentList,
+          {
+            id: crypto.randomUUID(),
+            title: value,
+          },
+        ];
+      });
+    } else {
+      setinterestList((currentList) => {
+        return [
+          ...currentList,
+          {
+            id: crypto.randomUUID(),
+            title: value,
+          },
+        ];
+      });
+    }
   };
 
   const updateInterestList = (value) => {
@@ -76,16 +88,16 @@ function App() {
     });
   };
 
-  const deleteSkill = (id) => {
-    setSkills((currentList) => {
-      return currentList.filter((skill) => skill.id !== id);
-    });
-  };
-
-  const deleteInterest = (id) => {
-    setinterestList((currentList) => {
-      return currentList.filter((interest) => interest.id !== id);
-    });
+  const deleteListItem = (array, id) => {
+    if (array === 'skills') {
+      setSkills((currentList) => {
+        return currentList.filter((skill) => skill.id !== id);
+      });
+    } else {
+      setinterestList((currentList) => {
+        return currentList.filter((interest) => interest.id !== id);
+      });
+    }
   };
 
   return (
@@ -93,14 +105,14 @@ function App() {
       <main>
         <BasicInfo updatePerson={updatePerson} />
         <Skills
-          updateSkillsList={updateSkillsList}
+          updateList={updateList}
           skillsList={skillsList}
-          deleteSkill={deleteSkill}
+          deleteListItem={deleteListItem}
         />
         <InterestForm
-          updateInterestList={updateInterestList}
+          updateList={updateList}
           interestList={interestList}
-          deleteInterest={deleteInterest}
+          deleteListItem={deleteListItem}
         />
       </main>
 
