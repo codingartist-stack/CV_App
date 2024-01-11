@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react';
+import ListForm from './listForm';
 
 export default function Skills(props) {
   const [skill, setSkill] = useState('');
@@ -28,18 +29,11 @@ export default function Skills(props) {
         />
         <button onClick={handleSubmit}>Add</button>
       </form>
-      <ul>
-        {props.skillsList.map((skill) => {
-          return (
-            <li key={skill.id}>
-              {skill.title}
-              <button onClick={() => props.deleteListItem('skills', skill.id)}>
-                Delete
-              </button>
-            </li>
-          );
-        })}
-      </ul>
+      <ListForm
+        name="skills"
+        list={props.skillsList}
+        deleteListItem={props.deleteListItem}
+      />
     </>
   );
 }

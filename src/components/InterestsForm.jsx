@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ListForm from './listForm';
 
 export default function InterestForm(props) {
   const [interestItem, setInterestItem] = useState('');
@@ -27,22 +28,11 @@ export default function InterestForm(props) {
         />
         <button onClick={handleSubmit}>Add</button>
       </form>
-      <ul>
-        {props.interestList.map((interestItem) => {
-          return (
-            <li key={interestItem.id}>
-              {interestItem.title}
-              <button
-                onClick={() =>
-                  props.deleteListItem('interests', interestItem.id)
-                }
-              >
-                Delete
-              </button>
-            </li>
-          );
-        })}
-      </ul>
+      <ListForm
+        name="interest"
+        list={props.interestList}
+        deleteListItem={props.deleteListItem}
+      />
     </>
   );
 }

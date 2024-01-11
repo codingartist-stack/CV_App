@@ -48,6 +48,18 @@ function App() {
     },
   ]);
 
+  const [workExperience, setWorkExperience] = useState([
+    {
+      id: crypto.randomUUID(),
+      company: 'ACME Corp',
+      jobTitle: 'Supervisor',
+      startDate: '2010',
+      endDate: '2020',
+      jobSummary:
+        'As an ACME Corp Supervisor, you will lead a dynamic team, ensuring optimal departmental operations. Your role involves overseeing workflow, maintaining quality standards, and driving productivity. Collaborate with upper management to implement strategic initiatives, foster a positive work environment, and monitor key performance indicators. If you excel in leadership, thrive in a fast-paced setting, and have a track record in successful team management, join us in this key supervisory role.',
+    },
+  ]);
+
   const updatePerson = (name, value) => {
     setPersonInfo((currentPerson) => {
       return { ...currentPerson, ...{ [name]: value } };
