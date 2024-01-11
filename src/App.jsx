@@ -3,6 +3,7 @@ import BasicInfo from './components/basicInfo';
 import { DisplayPreview } from './components/displayPreview';
 import Skills from './components/Skills';
 import InterestForm from './components/InterestsForm';
+import EducationForm from './components/EducationForm';
 
 function App() {
   const [personInfo, setPersonInfo] = useState({
@@ -43,8 +44,8 @@ function App() {
     {
       id: crypto.randomUUID(),
       school: 'University',
-      degree: 'Bacholars',
-      graduatedYear: 2006,
+      degree: "Bachelor's degree",
+      graduatedYear: '2006-07',
     },
   ]);
 
@@ -53,8 +54,8 @@ function App() {
       id: crypto.randomUUID(),
       company: 'ACME Corp',
       jobTitle: 'Supervisor',
-      startDate: '2010',
-      endDate: '2020',
+      startDate: '2010-12',
+      endDate: '2020-06',
       jobSummary:
         'As an ACME Corp Supervisor, you will lead a dynamic team, ensuring optimal departmental operations. Your role involves overseeing workflow, maintaining quality standards, and driving productivity. Collaborate with upper management to implement strategic initiatives, foster a positive work environment, and monitor key performance indicators. If you excel in leadership, thrive in a fast-paced setting, and have a track record in successful team management, join us in this key supervisory role.',
     },
@@ -102,14 +103,32 @@ function App() {
     });
   };
 
+  const updateEducation = (schoolVal, degreeVal, yearVal) => {
+    setEducation((currentEducation) => {
+      return [
+        ...currentEducation,
+        {
+          id: crypto.randomUUID(),
+          school: schoolVal,
+          degree: degreeVal,
+          graduatedYear: yearVal,
+        },
+      ];
+    });
+  };
+
   const deleteListItem = (array, id) => {
     if (array === 'skills') {
       setSkills((currentList) => {
         return currentList.filter((skill) => skill.id !== id);
       });
-    } else {
+    } else if (array === 'interest') {
       setinterestList((currentList) => {
         return currentList.filter((interest) => interest.id !== id);
+      });
+    } else {
+      setEducation((currentEducation) => {
+        return currentEducation.filter((edu) => edu.id !== id);
       });
     }
   };
@@ -118,6 +137,12 @@ function App() {
     <>
       <main>
         <BasicInfo updatePerson={updatePerson} />
+        <EducationForm
+          name="education"
+          updateEducation={updateEducation}
+          education={education}
+          deleteListItem={deleteListItem}
+        />
         <Skills
           updateList={updateList}
           skillsList={skillsList}
