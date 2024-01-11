@@ -159,6 +159,7 @@ function App() {
         personInfo={personInfo}
         skillsList={skillsList}
         interestList={interestList}
+        education={education}
       />
     </>
   );

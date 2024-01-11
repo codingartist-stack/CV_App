@@ -1,4 +1,5 @@
 import DisplayList from './DisplayList';
+import DisplayEdu from './DisplayEdu';
 
 export function DisplayPreview(props) {
   return (
@@ -18,6 +19,7 @@ export function DisplayPreview(props) {
       </aside>
       <DisplayList name="Skills" list={props.skillsList} />
       <DisplayList name="Interests" list={props.interestList} />
+      <DisplayEdu name="Education" educationList={props.education} />
     </section>
   );
 }
