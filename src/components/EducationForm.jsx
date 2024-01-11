@@ -29,10 +29,19 @@ export default function EducationForm(props) {
 
   return (
     <>
-      <h2>Education</h2>
       <form action="">
-        <fieldset>
+        <fieldset className="gridForm">
           <legend>Education</legend>
+
+          <label>Name of Education Institution</label>
+          <input
+            type="text"
+            name="school"
+            id="school"
+            onChange={handleSchool}
+          />
+
+          <label>Level Of Completion</label>
           <select
             className="form-control dropdown"
             id="education"
@@ -55,20 +64,8 @@ export default function EducationForm(props) {
             <option value="Master's degree">Master's degree</option>
             <option value="Doctorate or higher">Doctorate or higher</option>
           </select>
-        </fieldset>
 
-        <fieldset>
-          <legend>Name of Education Institution</legend>
-          <input
-            type="text"
-            name="school"
-            id="school"
-            onChange={handleSchool}
-          />
-        </fieldset>
-
-        <fieldset>
-          <legend>Year of Completion</legend>
+          <label>Year of Completion</label>
           <input
             type="month"
             name="yearCompletion"

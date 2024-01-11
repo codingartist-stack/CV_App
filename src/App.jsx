@@ -143,11 +143,13 @@ function App() {
           education={education}
           deleteListItem={deleteListItem}
         />
+        <hr />
         <Skills
           updateList={updateList}
           skillsList={skillsList}
           deleteListItem={deleteListItem}
         />
+        <hr />
         <InterestForm
           updateList={updateList}
           interestList={interestList}
