@@ -17,7 +17,6 @@ export default function DisplayWorkListForm(props) {
                 Delete
               </button>
             </li>
-            <hr />
           </>
         );
       })}
