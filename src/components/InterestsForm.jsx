@@ -17,7 +17,7 @@ export default function InterestForm(props) {
 
   return (
     <>
-      <form>
+      <form className="interestForm">
         <fieldset>
           <legend>Interests</legend>
           <label htmlFor={props.id + '-interest'}>Interests</label>

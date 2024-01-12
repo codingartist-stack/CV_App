@@ -28,7 +28,7 @@ export default function EducationForm(props) {
 
   return (
     <>
-      <form action="">
+      <form className="educationForm">
         <fieldset className="gridForm">
           <legend>Education</legend>
 

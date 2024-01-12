@@ -40,7 +40,7 @@ export default function WorkForm(props) {
 
   return (
     <>
-      <form action="">
+      <form className="workExForm">
         <fieldset className="gridForm">
           <legend>Work Experience</legend>
           <label htmlFor="company">Company Name</label>

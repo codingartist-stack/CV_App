@@ -18,7 +18,7 @@ export default function Skills(props) {
 
   return (
     <>
-      <form>
+      <form className="skillsForm">
         <fieldset>
           <legend>Skills</legend>
           <label htmlFor={props.id + '-skill'}>Skills</label>

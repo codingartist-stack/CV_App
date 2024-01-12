@@ -6,7 +6,7 @@
 function BasicInfo(props) {
   return (
     <>
-      <form>
+      <form className="basicInfoForm">
         <fieldset className="gridForm">
           <legend>Personal Information</legend>
           <label htmlFor={props.id + '-firstName'}>First Name</label>
