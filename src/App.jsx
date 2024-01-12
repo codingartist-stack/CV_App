@@ -156,7 +156,8 @@ function App() {
 
   return (
     <>
-      <main>
+      <main className="mainForm">
+        <h1>CSV Creator</h1>
         <BasicInfo updatePerson={updatePerson} />
         <EducationForm
           updateEducation={updateEducation}

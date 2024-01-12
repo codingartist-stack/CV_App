@@ -81,15 +81,66 @@
   --clr-neutral-100: #f2f2f0;
   --clr-neutral-500: #5b6e74;
   --clr-neutral-900: #0d0d0d;
+
+  --clr-dropShadow: rgb(139, 157, 162, 0.5);
 }
 
 #root {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 1.5rem;
+  margin: 0;
+}
+body {
+  margin: 0;
 }
 
 .gridForm {
   display: grid;
-  gap: 0.5em;
+  gap: 0.7em;
+}
+
+.mainForm {
+  display: grid;
+  gap: 1rem;
+  background-color: var(--clr-neutral-100);
+  padding: 1.5rem;
+  box-shadow: 5px 0px 8px var(--clr-dropShadow);
+  color: var(--clr-neutral-500);
+}
+
+fieldset {
+  border-radius: 10px;
+  border: solid var(--clr-secondary);
+  padding-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+textarea {
+  height: 6rem;
+  line-height: 1.2rem;
+}
+
+input,
+select,
+button {
+  padding: 0.5rem;
+}
+
+.listForm {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.listForm > input {
+  width: 90%;
+}
+
+button {
+  background-color: var(--clr-primary);
+  border-radius: 10px;
+  border: none;
+  color: var(--clr-neutral-900);
+  box-shadow: 2px 2px 2px var(--clr-dropShadow);
 }

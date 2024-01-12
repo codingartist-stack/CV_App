@@ -18,9 +18,9 @@ export default function InterestForm(props) {
   return (
     <>
       <form className="interestForm">
-        <fieldset>
+        <fieldset className="listForm">
           <legend>Interests</legend>
-          <label htmlFor={props.id + '-interest'}>Interests</label>
+          {/* <label htmlFor={props.id + '-interest'}>Interests</label> */}
           <input
             type="text"
             name="interest"

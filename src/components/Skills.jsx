@@ -19,9 +19,9 @@ export default function Skills(props) {
   return (
     <>
       <form className="skillsForm">
-        <fieldset>
+        <fieldset className="listForm">
           <legend>Skills</legend>
-          <label htmlFor={props.id + '-skill'}>Skills</label>
+          {/* <label htmlFor={props.id + '-skill'}>Skills</label> */}
           <input
             type="text"
             name="skills"
