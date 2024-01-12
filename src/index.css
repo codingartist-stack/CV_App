@@ -75,8 +75,10 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  --clr-primary: #bde8f1;
-  --clr-secondary: #819fa7;
+  /* --clr-primary: #bde8f1; */
+  --clr-primary: #9dbc98;
+  /* --clr-secondary: #819fa7; */
+  --clr-secondary: #638889;
 
   --clr-neutral-100: #f2f2f0;
   --clr-neutral-500: #5b6e74;
@@ -95,6 +97,51 @@ body {
   margin: 0;
 }
 
+button {
+  background-color: var(--clr-primary);
+  border: none;
+  color: var(--clr-neutral-900);
+  box-shadow: 2px 2px 2px var(--clr-dropShadow);
+
+  padding: 0.5rem;
+  border-radius: 7px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+button:hover {
+  background-color: var(--clr-secondary);
+}
+
+fieldset {
+  border-radius: 10px;
+  border: solid 2.5px var(--clr-dropShadow);
+  padding-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+fieldset:focus-within {
+  border: solid 2.5px var(--clr-secondary);
+}
+
+legend {
+  font-size: x-large;
+}
+
+textarea {
+  height: 6rem;
+  line-height: 1.2rem;
+}
+
+input,
+select,
+textarea {
+  padding: 0.5rem;
+  border-radius: 7px;
+  border: solid 2px var(--clr-dropShadow);
+}
+
 .gridForm {
   display: grid;
   gap: 0.7em;
@@ -109,25 +156,6 @@ body {
   color: var(--clr-neutral-500);
 }
 
-fieldset {
-  border-radius: 10px;
-  border: solid var(--clr-secondary);
-  padding-bottom: 1.5rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
-textarea {
-  height: 6rem;
-  line-height: 1.2rem;
-}
-
-input,
-select,
-button {
-  padding: 0.5rem;
-}
-
 .listForm {
   display: flex;
   gap: 1.5rem;
@@ -137,10 +165,8 @@ button {
   width: 90%;
 }
 
-button {
-  background-color: var(--clr-primary);
-  border-radius: 10px;
-  border: none;
-  color: var(--clr-neutral-900);
-  box-shadow: 2px 2px 2px var(--clr-dropShadow);
+.listItem {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
 }
