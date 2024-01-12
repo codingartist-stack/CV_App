@@ -8,23 +8,22 @@ export default function EducationForm(props) {
 
   const handleSchool = (e) => {
     setSchool(e.target.value);
-    console.log(e.target.value);
   };
 
   const handleDegree = (e) => {
     setDegree(e.target.value);
-    console.log(e.target.value);
   };
 
   const handleYear = (e) => {
     setYear(e.target.value);
-    console.log(e.target.value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     props.updateEducation(school, degree, year);
-    console.log(props.education);
+    setSchool('');
+    setDegree('');
+    setYear('');
   };
 
   return (
@@ -33,16 +32,18 @@ export default function EducationForm(props) {
         <fieldset className="gridForm">
           <legend>Education</legend>
 
-          <label>Name of Education Institution</label>
+          <label htmlFor="school">Name of Education Institution</label>
           <input
+            value={school}
             type="text"
             name="school"
             id="school"
             onChange={handleSchool}
           />
 
-          <label>Level Of Completion</label>
+          <label htmlFor="education">Level Of Completion</label>
           <select
+            value={degree}
             className="form-control dropdown"
             id="education"
             name="education"
@@ -65,19 +66,21 @@ export default function EducationForm(props) {
             <option value="Doctorate or higher">Doctorate or higher</option>
           </select>
 
-          <label>Year of Completion</label>
+          <label htmlFor="yearCompletion">Year of Completion</label>
           <input
+            value={year}
             type="month"
             name="yearCompletion"
             id="yearCompletion"
             onChange={handleYear}
           />
+          <button onClick={handleSubmit}>Add</button>
         </fieldset>
-        <button onClick={handleSubmit}>Add</button>
       </form>
       <DisplayEducationForm
         educationList={props.education}
         deleteListItem={props.deleteListItem}
+        name="education"
       />
     </>
   );

@@ -17,9 +17,9 @@ export function DisplayPreview(props) {
         <p>{props.personInfo.phone}</p>
         <p>{props.personInfo.email}</p>
       </aside>
+      <DisplayEdu name="Education" educationList={props.education} />
       <DisplayList name="Skills" list={props.skillsList} />
       <DisplayList name="Interests" list={props.interestList} />
-      <DisplayEdu name="Education" educationList={props.education} />
     </section>
   );
 }

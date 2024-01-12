@@ -4,6 +4,7 @@ import { DisplayPreview } from './components/displayPreview';
 import Skills from './components/Skills';
 import InterestForm from './components/InterestsForm';
 import EducationForm from './components/EducationForm';
+import WorkForm from './components/WorkForm';
 
 function App() {
   const [personInfo, setPersonInfo] = useState({
@@ -117,6 +118,22 @@ function App() {
     });
   };
 
+  const updateWork = (companyName, jobTitleName, start, end, summary) => {
+    setWorkExperience((currentWorkEx) => {
+      return [
+        ...currentWorkEx,
+        {
+          id: crypto.randomUUID(),
+          company: companyName,
+          jobTitle: jobTitleName,
+          startDate: start,
+          endDate: end,
+          jobSummary: summary,
+        },
+      ];
+    });
+  };
+
   const deleteListItem = (array, id) => {
     if (array === 'skills') {
       setSkills((currentList) => {
@@ -126,9 +143,13 @@ function App() {
       setinterestList((currentList) => {
         return currentList.filter((interest) => interest.id !== id);
       });
-    } else {
+    } else if (array === 'education') {
       setEducation((currentEducation) => {
         return currentEducation.filter((edu) => edu.id !== id);
+      });
+    } else {
+      setWorkExperience((currentWorkEx) => {
+        return currentWorkEx.filter((work) => work.id !== id);
       });
     }
   };
@@ -138,10 +159,15 @@ function App() {
       <main>
         <BasicInfo updatePerson={updatePerson} />
         <EducationForm
-          name="education"
           updateEducation={updateEducation}
           education={education}
           deleteListItem={deleteListItem}
+        />
+        <WorkForm
+          workExperience={workExperience}
+          updateWork={updateWork}
+          deleteListItem={deleteListItem}
+          name="workEx"
         />
         <hr />
         <Skills
