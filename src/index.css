@@ -101,6 +101,7 @@ button {
   background-color: var(--clr-primary);
   border: none;
   color: var(--clr-neutral-900);
+  font-weight: 600;
   box-shadow: 2px 2px 2px var(--clr-dropShadow);
 
   padding: 0.5rem;
@@ -110,6 +111,7 @@ button {
 }
 
 button:hover {
+  color: var(--clr-neutral-100);
   background-color: var(--clr-secondary);
 }
 
