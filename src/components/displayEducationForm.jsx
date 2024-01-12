@@ -1,6 +1,6 @@
 export default function DisplayEducationForm(props) {
   return (
-    <ul>
+    <ul className="list eduFormList">
       {props.educationList.map((edu) => {
         return (
           <li key={edu.id}>

@@ -12,15 +12,16 @@ export function DisplayPreview(props) {
         <h2>
           <i>{props.personInfo.title}</i>
         </h2>
-        <p>{props.personInfo.summary}</p>
       </main>
       <aside>
+        <p>{props.personInfo.summary}</p>
         <p>{props.personInfo.phone}</p>
         <p>{props.personInfo.email}</p>
+        <DisplayEdu name="Education" educationList={props.education} />
+        <DisplayList name="Skills" list={props.skillsList} />
+        <DisplayList name="Interests" list={props.interestList} />
       </aside>
-      <DisplayEdu name="Education" educationList={props.education} />
-      <DisplayList name="Skills" list={props.skillsList} />
-      <DisplayList name="Interests" list={props.interestList} />
+
       <DisplayWorkList
         name="Work Experience"
         workExperience={props.workExperience}

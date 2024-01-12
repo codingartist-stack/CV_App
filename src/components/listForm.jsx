@@ -1,6 +1,6 @@
 export default function ListForm(props) {
   return (
-    <ul>
+    <ul className="list">
       {props.list.map((item) => {
         return (
           <li key={item.id}>

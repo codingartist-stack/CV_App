@@ -3,7 +3,7 @@ export default function DisplayWorkList(props) {
     return;
   } else {
     return (
-      <>
+      <div className="list workExperience">
         <h3>{props.name}</h3>
         <ul>
           {props.workExperience.map((job) => {
@@ -21,7 +21,7 @@ export default function DisplayWorkList(props) {
             );
           })}
         </ul>
-      </>
+      </div>
     );
   }
 }

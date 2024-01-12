@@ -1,6 +1,6 @@
 export default function DisplayWorkListForm(props) {
   return (
-    <ul>
+    <ul className="list workFormList">
       {props.workExperience.map((job) => {
         return (
           <li key={job.id}>

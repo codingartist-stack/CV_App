@@ -3,7 +3,7 @@ export default function DisplayEdu(props) {
     return;
   } else {
     return (
-      <>
+      <div className="list education">
         <h3>{props.name}</h3>
         <ul>
           {props.educationList.map((edu) => {
@@ -18,7 +18,7 @@ export default function DisplayEdu(props) {
             );
           })}
         </ul>
-      </>
+      </div>
     );
   }
 }
