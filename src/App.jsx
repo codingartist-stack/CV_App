@@ -46,7 +46,13 @@ function App() {
       id: crypto.randomUUID(),
       school: 'SML University',
       degree: "Bachelor's degree",
-      graduatedYear: '2006-07',
+      graduatedYear: '2018-07',
+    },
+    {
+      id: crypto.randomUUID(),
+      school: 'WA College',
+      degree: 'Vocational qualification',
+      graduatedYear: '2012-07',
     },
   ]);
 
@@ -59,6 +65,15 @@ function App() {
       endDate: '2020-06',
       jobSummary:
         'As an ACME Corp Supervisor, you will lead a dynamic team, ensuring optimal departmental operations. Your role involves overseeing workflow, maintaining quality standards, and driving productivity. Collaborate with upper management to implement strategic initiatives, foster a positive work environment, and monitor key performance indicators. If you excel in leadership, thrive in a fast-paced setting, and have a track record in successful team management, join us in this key supervisory role.',
+    },
+    {
+      id: crypto.randomUUID(),
+      company: 'Quantum Innovations Solutions',
+      jobTitle: 'Senior Quantum Integration Specialist',
+      startDate: '2003-12',
+      endDate: '2010-06',
+      jobSummary:
+        'As a Senior Quantum Integration Specialist at Quantum Innovations Solutions, you will be at the forefront of groundbreaking technology, leading the integration of quantum solutions into our clients existing systems. Your role involves designing and implementing quantum algorithms, collaborating with cross-functional teams, and providing technical expertise in quantum computing. Join us in revolutionizing the technological landscape and shaping the future of quantum innovation. If you possess a deep understanding of quantum mechanics, programming proficiency, and a passion for cutting-edge technologies, this role is your gateway to the forefront of quantum advancements.',
     },
   ]);
 
@@ -157,7 +172,7 @@ function App() {
   return (
     <>
       <main className="mainForm">
-        <h1>CSV Creator</h1>
+        <h1 className="appTitle">CSV Creator</h1>
         <BasicInfo updatePerson={updatePerson} />
         <EducationForm
           updateEducation={updateEducation}

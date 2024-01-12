@@ -8,16 +8,18 @@ export default function DisplayWorkList(props) {
         <ul>
           {props.workExperience.map((job) => {
             return (
-              <li key={job.id}>
-                <strong>{job.jobTitle}</strong>
-                <div className="flexGroup">
-                  <em>{job.company}</em>
-                  <em>
-                    {job.startDate} - {job.endDate}
-                  </em>
-                </div>
-                <p>{job.jobSummary}</p>
-              </li>
+              <>
+                <li key={job.id}>
+                  <b>{job.jobTitle}</b>
+                  <div className="flexGroup">
+                    <em>{job.company}</em>
+                    <em>
+                      {job.startDate} - {job.endDate}
+                    </em>
+                  </div>
+                  <p>{job.jobSummary}</p>
+                </li>
+              </>
             );
           })}
         </ul>
