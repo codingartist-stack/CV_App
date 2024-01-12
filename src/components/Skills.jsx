@@ -19,15 +19,18 @@ export default function Skills(props) {
   return (
     <>
       <form>
-        <label htmlFor={props.id + '-skill'}>Skills</label>
-        <input
-          type="text"
-          name="skills"
-          id={props.id + '-skill'}
-          value={skill}
-          onChange={updateSkill}
-        />
-        <button onClick={handleSubmit}>Add</button>
+        <fieldset>
+          <legend>Skills</legend>
+          <label htmlFor={props.id + '-skill'}>Skills</label>
+          <input
+            type="text"
+            name="skills"
+            id={props.id + '-skill'}
+            value={skill}
+            onChange={updateSkill}
+          />
+          <button onClick={handleSubmit}>Add</button>
+        </fieldset>
       </form>
       <ListForm
         name="skills"

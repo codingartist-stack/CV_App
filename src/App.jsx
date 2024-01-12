@@ -44,7 +44,7 @@ function App() {
   const [education, setEducation] = useState([
     {
       id: crypto.randomUUID(),
-      school: 'University',
+      school: 'SML University',
       degree: "Bachelor's degree",
       graduatedYear: '2006-07',
     },
@@ -163,6 +163,7 @@ function App() {
           education={education}
           deleteListItem={deleteListItem}
         />
+        <hr />
         <WorkForm
           workExperience={workExperience}
           updateWork={updateWork}
@@ -188,6 +189,7 @@ function App() {
         skillsList={skillsList}
         interestList={interestList}
         education={education}
+        workExperience={workExperience}
       />
     </>
   );

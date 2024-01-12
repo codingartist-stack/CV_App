@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import DisplayWorkListForm from './displayWorkFormList';
 
 export default function WorkForm(props) {
   const [companyName, setcompany] = useState('');
@@ -70,7 +71,7 @@ export default function WorkForm(props) {
           />
           <label htmlFor="endDate">end Date (present option)</label>
           <input
-            value={start}
+            value={end}
             type="month"
             name="endDate"
             id="endDate"
@@ -88,6 +89,11 @@ export default function WorkForm(props) {
           <button onClick={handleSubmit}>Add</button>
         </fieldset>
       </form>
+      <DisplayWorkListForm
+        workExperience={props.workExperience}
+        deleteListItem={props.deleteListItem}
+        name="workEx"
+      />
     </>
   );
 }

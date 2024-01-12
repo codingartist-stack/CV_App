@@ -18,15 +18,18 @@ export default function InterestForm(props) {
   return (
     <>
       <form>
-        <label htmlFor={props.id + '-interest'}>Interests</label>
-        <input
-          type="text"
-          name="interest"
-          id={props.id + '-interest'}
-          value={interestItem}
-          onChange={updateInterestItem}
-        />
-        <button onClick={handleSubmit}>Add</button>
+        <fieldset>
+          <legend>Interests</legend>
+          <label htmlFor={props.id + '-interest'}>Interests</label>
+          <input
+            type="text"
+            name="interest"
+            id={props.id + '-interest'}
+            value={interestItem}
+            onChange={updateInterestItem}
+          />
+          <button onClick={handleSubmit}>Add</button>
+        </fieldset>
       </form>
       <ListForm
         name="interest"
