@@ -5,11 +5,10 @@ export default function DisplayEducationForm(props) {
         return (
           <li key={edu.id} className="listItem">
             <div className="listInfo">
-              <strong>{edu.degree}</strong>
-              <br />
-              <em>
+              <p className="bold">{edu.degree}</p>
+              <p className="italic">
                 {edu.school} - {edu.graduatedYear}
-              </em>
+              </p>
             </div>
             <button onClick={() => props.deleteListItem(props.name, edu.id)}>
               Delete

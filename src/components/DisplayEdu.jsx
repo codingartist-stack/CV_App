@@ -3,17 +3,16 @@ export default function DisplayEdu(props) {
     return;
   } else {
     return (
-      <div className="list education">
+      <div className="education">
         <h3>{props.name}</h3>
-        <ul>
+        <ul className="list">
           {props.educationList.map((edu) => {
             return (
               <li key={edu.id}>
-                <strong>{edu.degree}</strong>
-                <br />
-                <em>
+                <p className="bold">{edu.degree}</p>
+                <p className="italic">
                   {edu.school} - {edu.graduatedYear}
-                </em>
+                </p>
               </li>
             );
           })}

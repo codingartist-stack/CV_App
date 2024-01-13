@@ -3,9 +3,9 @@ export default function DisplayList(props) {
     return;
   } else {
     return (
-      <div className="list">
+      <div className={props.name}>
         <h3>{props.name}</h3>
-        <ul>
+        <ul className="list">
           {props.list.map((item) => {
             return <li key={item.id}>{item.title}</li>;
           })}

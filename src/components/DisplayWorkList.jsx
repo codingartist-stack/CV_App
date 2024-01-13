@@ -5,15 +5,15 @@ export default function DisplayWorkList(props) {
     return (
       <div className="list workExperience">
         <h3>{props.name}</h3>
-        <ul>
+        <ul className="list">
           {props.workExperience.map((job) => {
             return (
               <>
                 <li key={job.id}>
                   <p className="bold">{job.jobTitle}</p>
                   <div className="flexGroup">
-                    <p>{job.company}</p>
-                    <p>
+                    <p className="italic">{job.company}</p>
+                    <p className="italic">
                       {job.startDate} - {job.endDate}
                     </p>
                   </div>

@@ -7,8 +7,8 @@ export default function DisplayWorkListForm(props) {
             <li key={job.id}>
               <p className="bold">{job.jobTitle}</p>
               <div className="flexGroup">
-                <p>{job.company}</p>
-                <p>
+                <p className="italic">{job.company}</p>
+                <p className="italic">
                   {job.startDate} - {job.endDate}
                 </p>
               </div>
