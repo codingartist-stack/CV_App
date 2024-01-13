@@ -279,7 +279,7 @@ h2 {
 
 .personName {
   font-family: 'Lato-Bold', Inter, system-ui, Helvetica, Arial, sans-serif;
-  font-size: 1em;
+  font-size: 1.5em;
   text-transform: uppercase;
   letter-spacing: 0.2em;
 }
