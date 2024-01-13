@@ -172,7 +172,7 @@ function App() {
   return (
     <>
       <main className="mainForm">
-        <h1 className="appTitle">CSV Creator</h1>
+        <h1 className="appTitle">CV Creator</h1>
         <BasicInfo updatePerson={updatePerson} />
         <EducationForm
           updateEducation={updateEducation}
