@@ -10,12 +10,12 @@ export default function DisplayWorkList(props) {
             return (
               <>
                 <li key={job.id}>
-                  <b>{job.jobTitle}</b>
+                  <p className="bold">{job.jobTitle}</p>
                   <div className="flexGroup">
-                    <em>{job.company}</em>
-                    <em>
+                    <p>{job.company}</p>
+                    <p>
                       {job.startDate} - {job.endDate}
-                    </em>
+                    </p>
                   </div>
                   <p>{job.jobSummary}</p>
                 </li>

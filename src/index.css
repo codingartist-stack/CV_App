@@ -144,6 +144,16 @@ textarea {
   border: solid 2px var(--clr-dropShadow);
 }
 
+p {
+  margin: 0.25rem;
+}
+
+.bold {
+  font-weight: bolder;
+  font-size: larger;
+  margin-bottom: 0.25rem;
+}
+
 .appTitle {
   color: rgb(99, 136, 137);
   color: linear-gradient(
@@ -155,9 +165,9 @@ textarea {
   font-weight: bolder;
 }
 
-.gridForm {
-  display: grid;
-  gap: 0.7em;
+.flexGroup {
+  display: flex;
+  justify-content: space-between;
 }
 
 .mainForm {
@@ -167,6 +177,12 @@ textarea {
   padding: 1.5rem;
   box-shadow: 5px 0px 8px var(--clr-dropShadow);
   color: var(--clr-neutral-500);
+  overflow: scroll;
+}
+
+.gridForm {
+  display: grid;
+  gap: 0.7em;
 }
 
 .listForm {
@@ -194,4 +210,10 @@ textarea {
 
 .list > hr {
   justify-self: stretch;
+}
+
+.csvDisplay {
+  grid-template-areas:
+    'header header'
+    'aside workEx';
 }

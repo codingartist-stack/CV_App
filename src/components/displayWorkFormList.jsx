@@ -5,12 +5,12 @@ export default function DisplayWorkListForm(props) {
         return (
           <>
             <li key={job.id}>
-              <strong>{job.jobTitle}</strong>
+              <p className="bold">{job.jobTitle}</p>
               <div className="flexGroup">
-                <em>{job.company}</em>
-                <em>
+                <p>{job.company}</p>
+                <p>
                   {job.startDate} - {job.endDate}
-                </em>
+                </p>
               </div>
               <p>{job.jobSummary}</p>
               <button onClick={() => props.deleteListItem(props.name, job.id)}>
