@@ -99,6 +99,21 @@ body {
   background-size: cover;
 }
 
+@media (max-width: 1150px) {
+  #root {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* gap: 1.5rem; */
+    margin: 0;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--clr-neutral-100);
+    background-image: none;
+  }
+}
+
 button {
   background: var(--clr-primary);
   border: none;
@@ -204,6 +219,15 @@ h3 {
   overflow: scroll;
 }
 
+@media (max-width: 1150px) {
+  .mainForm {
+    height: max-content;
+    width: fit-content;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
 .gridForm {
   display: grid;
   gap: 0.7em;
@@ -269,6 +293,13 @@ h3 {
   justify-content: center;
   align-content: center;
   border-radius: 7px 7px 0 0;
+}
+
+@media (max-width: 1150px) {
+  .displayHeader {
+    padding-top: 3em;
+    padding-bottom: 3em;
+  }
 }
 
 .displayHeader > h1,
