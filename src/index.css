@@ -284,6 +284,20 @@ h3 {
   border-radius: 7px;
 }
 
+@media (max-width: 1150px) {
+  .csvDisplay {
+    max-width: 80ch;
+    max-height: min-content;
+  }
+}
+
+@media (max-width: 650px) {
+  .csvDisplay {
+    max-width: 60ch;
+    max-height: min-content;
+  }
+}
+
 .displayHeader {
   grid-area: header;
   width: 100%;
